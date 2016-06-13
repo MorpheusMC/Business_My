@@ -1,12 +1,13 @@
-package pro.kiter.business;
+package pro.kiter.business.fragment;
 
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import pro.kiter.business.R;
 
 import java.util.concurrent.TimeUnit;
 
@@ -41,7 +42,9 @@ public class SplashFragment extends Fragment {
                 e.printStackTrace();
             }
 
-            getActivity().getSupportFragmentManager().popBackStack();
+            if (getActivity() != null) {
+                getActivity().getFragmentManager().popBackStack();
+            }
             return null;
         }
     }
